@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: 'Comic Neue', cursive;
+}
+
+:root {
+    --loading-width: 160px;
+    --loading-height: 23px;
+    --button-bg: #F2ACB9;
+    --button-bg-hover: #E2979C;
+    --button-text-color: #ffffff;
+    --counter-bg: #ffffff;
+    --counter-text-color: #333;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main {
+    text-align: center;
+    width: 90vw;
+}
+
+.box {
+    display: inline-block;
+    border: solid black 4px;
+    width: var(--loading-width);
+    background-color: white;
+    margin-top: 3px;
+}
+
+.loading-box {
+    height: var(--loading-height);
+    width: 0;
+    background-color: #F2ACB9;
+    animation: none;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--loading-width);
+    }
+}
+
+#title,
+#result {
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+#me {
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+button {
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 8px;
+    color: var(--button-text-color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-bg-hover);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#hug-counter {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--counter-bg);
+    color: var(--counter-text-color);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
